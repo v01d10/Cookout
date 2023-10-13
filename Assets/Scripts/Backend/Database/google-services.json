@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1868263034",
+    "firebase_url": "https://cookout-8215c-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "cookout-8215c",
+    "storage_bucket": "cookout-8215c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1868263034:android:b426acc0d0d54e073195c3",
+        "android_client_info": {
+          "package_name": "com.RancidGames.Cookout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8bKrqf6uzWNNqBNUCBOqaYFkhzGKkqz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
