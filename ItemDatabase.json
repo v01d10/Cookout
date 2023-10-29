@@ -1,0 +1,28 @@
+{
+  "Items": {
+      "0": {
+        "ItemName": "Fries",
+        "Amount": 0,
+        "PrepareTime": 0.25,
+        "RequiredLevel": 0,
+        "Price": 1.25,
+        "RequiredItems": [ 1, 2 ]
+      } ,
+      "1": {
+        "ItemName": "Burger",
+        "Amount": 0,
+        "PrepareTime": 0.4,
+        "RequiredLevel": 4,
+        "Price": 2.5,
+        "RequiredItems": [ 1, 2, 3, 4 ]
+      } ,
+      "2": {
+        "ItemName": "Omelette",
+        "Amount": 0,
+        "PrepareTime": 0.2,
+        "RequiredLevel": 2,
+        "Price": 1,
+        "RequiredItems": [ 1, 2 ,3]
+      }
+  }
+}

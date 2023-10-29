@@ -8,13 +8,14 @@ using Unity.VisualScripting;
 
 [System.Serializable]
 public class AuthManager : MonoBehaviour {
+    public static AuthManager instance;
     private DatabaseReference db;
     private Firebase.Auth.FirebaseAuth auth;
     public AuthEmail authEmail;
     DataManager dataManager;
     AuthUI authUI;
 
-    public ChefManager chefManager;
+    public WorkerManager chefManager;
     public KitchenManager kitchenManager;
 
     [SerializeField] public Player ThisPlayer;
@@ -31,12 +32,14 @@ public class AuthManager : MonoBehaviour {
     string pHash;
 
     private void Start() {
+        instance = this;    
+        FirebaseDatabase.DefaultInstance.SetPersistenceEnabled(false);
         db = FirebaseDatabase.DefaultInstance.RootReference;
         authEmail = GetComponent<AuthEmail>();
         dataManager = GetComponentInParent<DataManager>();
         authUI = GameObject.Find("UI").GetComponent<AuthUI>();
 
-        chefManager = GameObject.Find("ChefManager").GetComponent<ChefManager>();
+        chefManager = GameObject.Find("ChefManager").GetComponent<WorkerManager>();
         kitchenManager = GameObject.Find("KitchenManager").GetComponent<KitchenManager>();
 
         if(dataManager.CheckLocalPlayer()) {
@@ -47,10 +50,6 @@ public class AuthManager : MonoBehaviour {
     }
 
     private void OnDestroy() {
-        var timestamp = Convert.ToInt64(ServerValue.Timestamp);
-        //long time = Convert.ToInt64(timestamp);
-        Debug.Log("Log out time: " + timestamp);
-        ThisPlayer.LogOutTime = timestamp;
         SavePlayer();
     }
 
@@ -204,31 +203,10 @@ public class AuthManager : MonoBehaviour {
 
     public void SavePlayer() {
         Player player = ThisPlayer;
+        player.LogOutTime = TimeHandler.instance.GetTime().ToString();
         string json = JsonUtility.ToJson(player);
         db.Child("Players").Child(ThisPlayer.PlayerID).SetRawJsonValueAsync(json);
         Debug.Log("Player saved...");
-    }
-
-    DateTime GetTime() {
-        var time = DateTime.UtcNow;
-
-        FirebaseDatabase.DefaultInstance.GetReference(".info/serverTimeOffset").GetValueAsync().ContinueWith(task => {
-            if(task.IsCompleted) {
-                var offset = long.Parse(task.Result.Value.ToString());
-                time = DateTime.UtcNow.AddMilliseconds(offset);
-            }
-        });
-        return time;
-        //var timeFirst = DateTime.ParseExact("2023-10-07 14:00:00,000", "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
-
-    }
-
-    int GetElapsedTime(DateTime timeStart) {
-        DateTime timeNow = GetTime();
-        TimeSpan elapsed = timeStart - timeNow;
-        int hours = Math.Abs((int)elapsed.TotalHours);
-        Debug.Log(elapsed + " = " + hours);
-        return hours;
     }
 }
 

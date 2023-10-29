@@ -8,12 +8,12 @@ public class AutosaveManager : MonoBehaviour {
     float autosaveTimer;
 
     AuthManager authManager;
-    ChefManager chefManager;
+    WorkerManager chefManager;
     KitchenManager kitchenManager;
 
     private void Start() {
         authManager = GetComponent<AuthManager>();
-        chefManager = GameObject.Find("ChefManager").GetComponent<ChefManager>();
+        chefManager = GameObject.Find("ChefManager").GetComponent<WorkerManager>();
         kitchenManager = GameObject.Find("KitchenManager").GetComponent<KitchenManager>();
 
         StartCoroutine(AutosaveTimer());

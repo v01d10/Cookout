@@ -108,7 +108,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8795034873201582433}
   - component: {fileID: 8795034873201582432}
-  - component: {fileID: 8795034873201582447}
   - component: {fileID: 8795034873201582434}
   - component: {fileID: 8795034873201582435}
   m_Layer: 0
@@ -146,32 +145,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3562512c7685ab4abe65ad3ef7af92e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  authManager: {fileID: 0}
   ThisNavigation: {fileID: 0}
-  CurrentWorkstation: {fileID: 0}
   ChefSpeed: 0
   Working: 0
   ThisWorker:
     WorkerName: 
     WorkerID: 
-    WorkerHealth: 0
-    WorkerMaxHealth: 0
-    WorkerLevel: 0
-    WorkerExp: 0
-    WorkerExpNeeded: 0
-    WorkerLocation: {x: 0, y: 0, z: 0}
-  authManager: {fileID: 0}
---- !u!114 &8795034873201582447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8795034873201582436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4455fbfd9744994dacd6cc8f06cb8e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+    WorkerType: 0
+    WorkerPosition: {x: 0, y: 0, z: 0}
+    WorkerRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!114 &8795034873201582434
 MonoBehaviour:
   m_ObjectHideFlags: 0

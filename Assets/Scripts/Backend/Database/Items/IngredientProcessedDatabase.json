@@ -1,0 +1,12 @@
+[
+  {
+    "ItemName": "Mushrooms Sliced",
+    "Amount": 0,
+    "PrepareTime": 0.2,
+    "RequiredLevel": 3,
+    "Price": 0,
+    "Type": 2,
+    "RequiredItems": [1],
+    "IconURL": "gs://cookout-8215c.appspot.com/ItemDB/Icons/Dishes/full-pizza.png"
+  }
+]

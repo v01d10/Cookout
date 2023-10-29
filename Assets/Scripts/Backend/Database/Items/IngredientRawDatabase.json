@@ -1,0 +1,12 @@
+[
+  {
+    "ItemName": "Mushrooms",
+    "Amount": 0,
+    "PrepareTime": 0.2,
+    "RequiredLevel": 2,
+    "Price": 1,
+    "Type": 1,
+    "RequiredItems": [1, 2, 3],
+    "IconURL": "gs://cookout-8215c.appspot.com/ItemDB/Icons/Dishes/full-pizza.png"
+  }
+]

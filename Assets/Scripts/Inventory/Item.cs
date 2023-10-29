@@ -17,8 +17,10 @@ public class Item {
     public int Amount;
     public float PrepareTime;
     public int RequiredLevel;
-    public float Price;
+    public float FinishExperince;
     public List<int> RequiredItems;
+    public List<int> RequiredItemsAmounts;
+    public string IconURL;
 
     public Sprite GetSprite() {
         switch (itemType) {

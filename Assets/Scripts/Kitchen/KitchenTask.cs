@@ -5,8 +5,9 @@ using UnityEngine;
 
 [System.Serializable]
 public class KitchenTask {
-    public DateTime StartTime;
-    public DateTime FinishTime;
-    public float FinishAmount;
-    public Recipe recipe;
+    public string StartTime;
+    public string FinishTime;
+    public float FinishExperience;
+    public Item recipe;
+    public string workstationID;
 }
